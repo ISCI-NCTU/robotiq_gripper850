@@ -21,18 +21,19 @@ while counter < 1:
    time.sleep(1)
  
 while(True):
+   raw_input()
    print "Close gripper"
    ser.write("\x09\x10\x03\xE8\x00\x03\x06\x09\x00\x00\xFF\xFF\xFF\x42\x29")
    data_raw = ser.readline()
    print(data_raw)
    data = binascii.hexlify(data_raw)
    print "Response 3 ", data
-   time.sleep(2)
- 
+  # time.sleep(1)
+   raw_input() 
    print "Open gripper"
    ser.write("\x09\x10\x03\xE8\x00\x03\x06\x09\x00\x00\x00\xFF\xFF\x72\x19")
    data_raw = ser.readline()
    print(data_raw)
    data = binascii.hexlify(data_raw)
    print "Response 4 ", data
-   time.sleep(2)
+  # time.sleep(1)
